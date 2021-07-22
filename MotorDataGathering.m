@@ -6,6 +6,8 @@ shield = mkrMotorCarrier(a)
 encoder = rotaryEncoder(a,'D6','D7',12)
 dcm = dcmotor(shield,3)
 
+
+
 timeArr = [];
 dataArr = [];
 inputArr = [];
@@ -14,14 +16,14 @@ prevInc = 0
 start(dcm)
 tic
 dcm.Speed = 0
-while time <= 120
-    if time >= 96
+while time <= 100
+    if time >= 80
         dcm.Speed = 0;
-    elseif time >= 72
+    elseif time >= 60
         dcm.Speed = 1;
-    elseif time >= 48
+    elseif time >= 40
         dcm.Speed = -0.5;
-    elseif time >= 24
+    elseif time >= 20
         dcm.Speed = 0.5;
     end
     time = toc;
@@ -35,6 +37,6 @@ end
 hold on
 plot(timeArr,dataArr)
 plot(timeArr,inputArr*100)
-inputArr = inputArr * 8.03
+inputArr = inputArr * 12
 
 stop(dcm)
