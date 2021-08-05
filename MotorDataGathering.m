@@ -37,6 +37,6 @@ end
 hold on
 plot(timeArr,dataArr)
 plot(timeArr,inputArr*100)
-inputArr = inputArr * 12
+inputArr = inputArr * 8
 
 stop(dcm)
